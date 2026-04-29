@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Admina — Viet Tien</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <!-- LOGIN -->
+    <div class="admin-login" id="loginScreen">
+        <div class="login-box">
+            <h1>Viet Tien</h1>
+            <p>Panel administracyjny</p>
+            <input type="password" id="loginPass" placeholder="Hasło" autofocus>
+            <button id="loginBtn">Zaloguj się</button>
+            <p class="login-error" id="loginError">Nieprawidłowe hasło</p>
+        </div>
+    </div>
+
+    <!-- ADMIN PANEL -->
+    <div class="admin-panel" id="adminPanel">
+        <header class="admin-header">
+            <h1>Panel <span>Admina</span></h1>
+            <div class="btns">
+                <button class="btn-sm btn-accent" id="addBtn">+ Dodaj danie</button>
+                <a href="../index.html" class="btn-sm btn-ghost">Strona główna</a>
+                <button class="btn-sm btn-ghost" id="logoutBtn">Wyloguj</button>
+            </div>
+        </header>
+        <div class="admin-body">
+            <div class="admin-toolbar">
+                <div class="admin-search">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <input type="text" id="adminSearch" placeholder="Szukaj dania...">
+                </div>
+                <div class="admin-stats">
+                    <div class="admin-stat"><h3 id="totalItems">0</h3><p>Dań</p></div>
+                    <div class="admin-stat"><h3 id="totalCats">0</h3><p>Kategorii</p></div>
+                </div>
+            </div>
+            <div style="overflow-x:auto">
+                <table class="menu-table">
+                    <thead><tr><th>ID</th><th>Nazwa</th><th>Kategoria</th><th>Cena</th><th>Tagi</th><th>Akcje</th></tr></thead>
+                    <tbody id="menuBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL -->
+    <div class="modal-overlay" id="modal">
+        <div class="modal">
+            <h2 id="modalTitle">Dodaj danie</h2>
+            <form id="itemForm">
+                <input type="hidden" id="itemId">
+                <div class="form-group"><label>Nazwa</label><input type="text" id="itemName" required></div>
+                <div class="form-group">
+                    <label>Kategoria</label>
+                    <select id="itemCategory">
+                        <option value="zupy">Zupy</option><option value="sajgonki">Sajgonki</option>
+                        <option value="kalmary">Kalmary</option><option value="kurczak">Kurczak</option>
+                        <option value="wieprzowina">Wieprzowina</option><option value="wolowina">Wołowina</option>
+                        <option value="kaczka">Kaczka</option><option value="udko_kurczaka">Udko z kurczaka</option>
+                        <option value="krewetki">Krewetki</option><option value="makaron_chinski">Makaron chiński</option>
+                        <option value="makaron_sojowy">Makaron sojowy</option><option value="makaron_ryzowy">Makaron ryżowy</option>
+                        <option value="tofu">Tofu</option><option value="makaron_udon">Makaron Udon</option>
+                        <option value="pad_thai">Pad Thai</option><option value="ryz_smazony">Ryż smażony</option>
+                        <option value="kurczak_z_grilla">Kurczak z grilla</option><option value="pierogi">Pierogi</option>
+                        <option value="ryba">Ryba Tilapia</option><option value="schab">Schab</option>
+                        <option value="wegorz">Węgorz</option><option value="kurczak_w_panierce">Kurczak w panierce</option>
+                        <option value="kurczak_w_ciescie">Kurczak w cieście</option><option value="boxy">Boxy</option>
+                        <option value="dodatki">Dodatki</option><option value="napoje">Napoje</option>
+                        <option value="nowosci">Nowości</option>
+                    </select>
+                </div>
+                <div class="form-group"><label>Cena (zł)</label><input type="number" id="itemPrice" step="0.5" min="0"></div>
+                <div class="form-group">
+                    <label>Tagi</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" value="ostre"> Ostre</label>
+                        <label><input type="checkbox" value="wege"> Wege</label>
+                        <label><input type="checkbox" value="owoce_morza"> Owoce morza</label>
+                        <label><input type="checkbox" value="nowosc"> Nowość</label>
+                        <label><input type="checkbox" value="box"> Box</label>
+                    </div>
+                </div>
+                <div class="modal-btns">
+                    <button type="button" class="btn-sm btn-ghost" id="cancelBtn">Anuluj</button>
+                    <button type="submit" class="btn-sm btn-accent" id="saveBtn">Zapisz</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>
