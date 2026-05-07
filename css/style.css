@@ -47,8 +47,8 @@ ul { list-style: none; }
 .nav-links a::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: var(--accent); transition: var(--transition); }
 .nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
 .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
-.nav-cta { display: inline-flex; align-items: center; gap: 6px; background: var(--accent); color: #fff !important; padding: 8px 18px; border-radius: 50px; font-weight: 600; flex-shrink: 0; font-size: 0.85rem; overflow: hidden; }
-.nav-cta svg { flex-shrink: 0; width: 15px; height: 15px; }
+.nav-cta { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #fff !important; padding: 11px 24px; border-radius: 50px; font-weight: 600; flex-shrink: 0; font-size: 0.95rem; overflow: hidden; }
+.nav-cta svg { flex-shrink: 0; width: 18px; height: 18px; display: block; }
 .nav-cta:hover { background: var(--accent-light); transform: translateY(-2px); box-shadow: 0 4px 20px rgba(230,57,70,0.4); }
 .nav-cta::after { display: none !important; }
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 5px; }
